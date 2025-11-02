@@ -20,16 +20,16 @@ public class UserController {
     }
 
     // Перенаправление с /users на /user
-    @GetMapping("/users")
-    public String redirectToUser() {
-        return "redirect:/user";
-    }
+//    @GetMapping("/users")
+//    public String redirectToUser() {
+//        return "redirect:/user";
+//    }
 
     @GetMapping()
     public String UserProfile(Model model, Principal principal) {
         User user = userService.findByUsername(principal.getName());
         model.addAttribute("user", user);
-        return "user-profile";
+        return "user";
     }
 
 
